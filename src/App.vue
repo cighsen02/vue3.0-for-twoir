@@ -1,42 +1,48 @@
 <template>
-	<div class="container">
-		<img src="./assets/images/logo.png">
-		<h1>Hello Vue 3!</h1>
-		<br />
-		<button class="btn btn-primary" @click="inc">Clicked {{ count }} times.</button>
+	<div id="app">
+		<div class="container-xxl my-4 bd-layout">
+			<div class="bd-sidebar">
+				<router-link class="btn btn-primary" to="/">Home</router-link>
+				<router-link class="btn btn-success" to="/contact">Contact</router-link>
+			</div>
+			
+			<div class="bd-intro pt-md-3 pl-lg-4">
+				<img class="rounded mx-auto d-block" src="./assets/images/logo.png">
+				<router-view />
+				
+			</div>
+			
+			
+			
+			
+			<div class="bd-toc pl-xl-3 text-muted mb-lg-5">
+				
+				中间备用<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>备用<br><br><br><br>
+				
+			</div>
+			
+			
+			
+			<main class="bd-content order-1 pl-lg-4">
+				备用<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>备用<br><br><br><br><br><br><br>
+			</main>
+		</div>
 	</div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 export default {
-	setup() {
-		const count = ref(0)
-		const inc = () => {
-			count.value++
-		}
-
-		// effect(function log(){
-		// 	console.log('count changed!', count.value)
-		// })
-				
-		return {
-			count,
-			inc
-		}
-	}
-}
+	
+	
+};
 </script>
 
-<style>
-	body {
-		text-align: center;
-	}
-	img {
-	  width: 200px;
-	}
-	h1 {
-	  font-family: Arial, Helvetica, sans-serif;
-	}
+<style lang="scss">
+	
+img {
+	max-height: 200px;
+}
+
 </style>
