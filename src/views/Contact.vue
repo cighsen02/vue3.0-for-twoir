@@ -1,4 +1,5 @@
 <template>
+	<music-header />
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="card">
@@ -20,3 +21,11 @@
 		</div>		
 	</div>
 </template>
+
+<script>
+import MusicHeader from './components/MusicHeader.vue'
+
+export default {
+	components: { MusicHeader }
+}
+</script>

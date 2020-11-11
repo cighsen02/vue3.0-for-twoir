@@ -1,38 +1,43 @@
 .bd-navbar {
-  padding: .625rem 0;
-  background-color: $bd-purple-bright;
+	padding: .625rem 0;
+	background-color: $bd-purple-bright;
+	background-image: url(../images/nav_bg_pattern.png);
 
-  @include media-breakpoint-down(lg) {
-    .navbar-nav-scroll {
-      width: 100%;
+	@include media-breakpoint-down(lg) {
+		.navbar-nav-scroll {
+			width: 100%;
+			.navbar-nav {
+				margin: -.5rem 0;
+				overflow-x: auto;
+				white-space: nowrap;
+				-webkit-overflow-scrolling: touch;
+			}
+		}
+	}
 
-      .navbar-nav {
-        margin: -.5rem 0;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
-  }
+	.navbar-nav {
+		.nav-link {
+			color: rgba($white, .85);
 
-  .navbar-nav {
-    .nav-link {
-      color: rgba($white, .85);
+			&:hover,
+			&:focus {
+				color: $white;
+			}
 
-      &:hover,
-      &:focus {
-        color: $white;
-      }
+			&.active {
+				font-weight: 600;
+				color: $white;
+			}
+		}
+	}
 
-      &.active {
-        font-weight: 600;
-        color: $white;
-      }
-    }
-  }
-
-  .navbar-nav-svg {
-    width: 1rem;
-    height: 1rem;
-  }
+	.brand-logo {
+		background: url(http://www.twoir.com/assets/image/logo130x35.png) no-repeat;
+		width: 160px;
+		height: 35px;
+		display: inline-block;
+		text-indent: -9999px;
+		white-space: nowrap;
+		line-height: 0;
+	}
 }

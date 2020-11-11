@@ -1,6 +1,7 @@
 const path = require('path')
 const {	VueLoaderPlugin} = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = (env = {}) => ({
 	mode: env.prod ? 'production' : 'development',
@@ -17,7 +18,8 @@ module.exports = (env = {}) => ({
 			// extra re-export somehow causes webpack to always invalidate the module
 			// on the first HMR update and causes the page to reload.
 			'vue': '@vue/runtime-dom'
-		}
+		},
+		extensions: ['.ts', '.js']
 	},
 	module: {
 		rules: [{
@@ -32,6 +34,12 @@ module.exports = (env = {}) => ({
 						limit: 8192
 					}
 				}
+			},
+			// JavaScript: Use Babel to transpile JavaScript files
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: ['babel-loader']
 			},
 			{
 				test: /\.css$/,
@@ -48,19 +56,20 @@ module.exports = (env = {}) => ({
 				test: /\.(scss)$/,
 				use: [{
 					loader: 'style-loader', // inject CSS to page
+					// options: {
+					// 	sourceMap: true,
+					// 	//importLoaders: 1
+					// }
 				}, {
 					loader: 'css-loader', // translates CSS into CommonJS modules
+					// options: {
+					// 	sourceMap: true
+					// }
 				}, {
-					loader: 'postcss-loader', // Run postcss actions
-					options: {
-						plugins: function() { // postcss plugins, can be exported to postcss.config.js
-							return [
-								require('autoprefixer')
-							];
-						}
-					}
-				}, {
-					loader: 'sass-loader' // compiles Sass to CSS
+					loader: 'sass-loader', // compiles Sass to CSS
+					// options: {
+					// 	sourceMap: true
+					// }
 				}]
 			},
 		]
@@ -70,13 +79,20 @@ module.exports = (env = {}) => ({
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
 			chunkFilename: "[id].css"
+		}),
+		new HtmlWebpackPlugin({
+			title: 'webpack',
+			//favicon: '/favicon.png',
+			template: './src/index.html', // template file
+			filename: 'index.html', // output file
 		})
 	],
 	devServer: {
 		inline: true,
 		hot: true,
+		port: 5001,
 		stats: 'minimal',
-		contentBase: __dirname,
+		contentBase: path.join(__dirname, "dist"),
 		overlay: true
 	}
 })

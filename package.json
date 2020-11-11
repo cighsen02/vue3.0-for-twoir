@@ -9,16 +9,23 @@
 	},
 	"dependencies": {
 		"autoprefixer": "^9.8.6",
-		"bootstrap": "^5.0.0-alpha1",
+		"bootstrap": "^5.0.0-alpha2",
 		"postcss-cli": "^7.1.1",
-		"vue": "^3.0.0-rc.5",
-		"vue-router": "^4.0.0-beta.6"
+		"vue": "^3.0.2",
+		"vue-router": "^4.0.0-rc.2"
 	},
 	"devDependencies": {
-		"@vue/compiler-sfc": "^3.0.0-rc.5",
-		"axios": "^0.19.2",
-		"css-loader": "^3.4.2",
+		"@babel/core": "^7.12.3",
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/plugin-transform-runtime": "^7.12.1",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/runtime": "^7.12.5",
+		"@vue/compiler-sfc": "^3.0.2",
+		"axios": "^0.20.0-0",
+		"babel-loader": "^8.2.1",
+		"css-loader": "^3.6.0",
 		"file-loader": "^6.0.0",
+		"html-webpack-plugin": "^4.5.0",
 		"mini-css-extract-plugin": "^0.9.0",
 		"node-sass": "^4.14.1",
 		"popper.js": "^1.16.1",
@@ -26,10 +33,11 @@
 		"rollup-plugin-vue": "^6.0.0-beta.8",
 		"sass-loader": "^9.0.3",
 		"style-loader": "^1.2.1",
+		"ts-loader": "^8.0.11",
 		"url-loader": "^4.0.0",
-		"vue-loader": "^16.0.0-alpha.3",
-		"webpack": "^4.42.1",
-		"webpack-cli": "^3.3.11",
-		"webpack-dev-server": "^3.10.3"
+		"vue-loader": "^16.0.0-rc.1",
+		"webpack": "^4.44.2",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0"
 	}
 }
