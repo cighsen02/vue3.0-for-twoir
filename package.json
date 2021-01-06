@@ -21,7 +21,7 @@
 		"@babel/preset-env": "^7.12.1",
 		"@babel/runtime": "^7.12.5",
 		"@vue/compiler-sfc": "^3.0.2",
-		"axios": "^0.20.0-0",
+		"axios": "^0.21.1",
 		"babel-loader": "^8.2.1",
 		"css-loader": "^3.6.0",
 		"file-loader": "^6.0.0",
